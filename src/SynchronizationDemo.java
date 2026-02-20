@@ -1,14 +1,12 @@
 class Table {
     synchronized void printTable(int n) {
         for (int i = 1; i <= 5; i++) {
-            System.out.print(n * i);
-            if (i < 5) {
-                System.out.print(" ");
-            }
+            System.out.print(n * i + " ");
         }
-        System.out.println();
+        System.out.println(); // newline after trailing space
     }
 }
+
 class MyThread1 extends Thread {
     Table t;
 
@@ -20,6 +18,7 @@ class MyThread1 extends Thread {
         t.printTable(5);
     }
 }
+
 class MyThread2 extends Thread {
     Table t;
 
@@ -32,7 +31,7 @@ class MyThread2 extends Thread {
     }
 }
 
-public class SynchronizationDemo {
+public class SychronizationDemo {
     public static void main(String[] args) {
         Table obj = new Table();
 
