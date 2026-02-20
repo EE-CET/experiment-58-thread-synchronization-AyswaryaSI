@@ -1,16 +1,21 @@
 class Table {
     synchronized void printTable(int n) {
         for (int i = 1; i <= 5; i++) {
-            System.out.print(n * i + " ");
+            System.out.print(n * i);
+            if (i < 5) {
+                System.out.print(" ");
+            }
         }
         System.out.println();
     }
 }
 class MyThread1 extends Thread {
     Table t;
+
     MyThread1(Table t) {
         this.t = t;
     }
+
     public void run() {
         t.printTable(5);
     }
@@ -27,7 +32,7 @@ class MyThread2 extends Thread {
     }
 }
 
-public class SynchronizationDemo {
+public class Main {
     public static void main(String[] args) {
         Table obj = new Table();
 
